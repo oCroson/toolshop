@@ -45,6 +45,22 @@ if [[ "$puppet_needed" == "true" ]]; then
   fi
 fi
 
+# Define default Terraform version (if not set)
+terraform_version=${terraform_version:-latest}
+
+# Install Terraform based on package manager and desired version
+if [ "$package_manager" ]; then
+  # Adjust package name and installation command based on your system
+  if [ "$package_manager" == "apt" ]; then
+    package_name="terraform=$terraform_version"
+    sudo apt update && sudo apt install $package_name
+  elif [ "$package_manager" == "yum" ]; then
+    package_name="hashicorp-terraform"  # Adjust package name if needed
+    sudo yum install -y https://releases.hashicorp.com/terraform/${terraform_version}/terraform_${terraform_version}_linux_amd64.zip
+  fi
+fi
+
+
 # Create ansi-scripts directory
 mkdir -p ~/ops-repository
 
