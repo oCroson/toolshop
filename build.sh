@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define default Ansible version (if not set)
-ansible_version=${ansible_version:-latest}
+ansible_version=$ansible_version
 
 # Package manager check
 if [ $(command -v apt) ]; then
@@ -25,6 +25,8 @@ if ! command -v ansible &> /dev/null; then
   fi
 fi
 
+puppet_version=$puppet_version
+
 if [ $(command -v apt) ]; then
   package_manager="apt"
   package_name="puppet=$puppet_version"
@@ -46,7 +48,7 @@ if [[ "$puppet_needed" == "true" ]]; then
 fi
 
 # Define default Terraform version (if not set)
-terraform_version=${terraform_version:-latest}
+terraform_version=$terraform_version
 
 # Install Terraform based on package manager and desired version
 if [ "$package_manager" ]; then
