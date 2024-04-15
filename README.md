@@ -9,6 +9,8 @@ It is designed to be plug and played into an existing CI/CD architecture, or to 
 
 I am also using toolshop as a way to display and to prove what I consider "best practice" for running an operations team's configuration management repositories.  The "Ops Model" as I call it that employs this method uses an environment centric approach to calling information to be configured onto remote systems, allowing a one stop shop CM source for most of an organizations needs.  This model, which will be described in the ops model example even allows for customization of which version of each toolsets run across an organization.  So even if you don't want the feature provided by toolshop of automated consistency of versions across your entire organization managed for you, you can still use the Ops repo management model to ensure specific environments are working with specific versions of code.  The only downside I currently see to this system is older roles and plays will need to live inside their environments and specific versions of toolshop would need to be maintained in those "sub-environment ops repos".  This will all make more sense if you read the Ops Repo Model Example repository located here: https://github.com/oCroson/ops_repo_example, when it is written of course.
 
+The idea here, and end goal, is to create a application or database resource via commiting the code for that resource in the ops repo, and everything else to take place beautifully as intended using toolshop on the backend.
+
 ## Features:
 
 - Version control ALL of your DevOps tooling in one place, organization wide.  You can use what tool you want, but keeping up pace with everyone else's version is now a collective responsibilty with no silos.
