@@ -66,5 +66,8 @@ fi
 # Create ansi-scripts directory
 mkdir -p ~/ops-repository
 
+git config --global user.name "$git_username"
+git config --global user.email "$git_email"
+
 # Clone Git repository (replace with your actual repository URL)
 git clone $ops_repository ./ops-repository
