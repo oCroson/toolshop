@@ -18,5 +18,11 @@ I am also using toolshop as a way to display and to prove what I consider "best 
 - Customizability.  Customize the size, shape, or usage of your toolshop container.  Don't use puppet? It won't install! Saving you time and space.
 - Peacemaking.  Take operations management of the service off the Ops team, or put it right back on! Either way toolshop makes the handoff easy.
 
+## Shortcomings:
+
+- Currently, even though I state otherwise above, I do not have "sub environment dated version control" working as intended.
+- It isn't finished!
+- It wants you to manage versions manually by default in the event you write some automation that runs out of date.  While it could always stay latest for you, depending on the size of your organization this may accidentally create large swaths of unexpected work if a team doesnt use the tool but has CM plays being utilized.
+
 
 
