@@ -10,6 +10,16 @@ elif [ $(command -v yum) ]; then
   package_manager="yum"
 fi
 
+# Check if Git is already installed
+if ! command -v git &> /dev/null; then
+  # Install Git based on package manager
+  if [ "$package_manager" == "apt" ]; then
+    sudo apt update && sudo apt install git
+  elif [ "$package_manager" == "yum" ]; then
+    sudo yum install git
+  fi
+fi
+
 # Check if Ansible is already installed (assuming 'ansible' command)
 if ! command -v ansible &> /dev/null; then
   # Install Ansible based on package manager and desired version
